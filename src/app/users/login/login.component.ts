@@ -17,27 +17,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  loginSubmit(form){
+  loginSubmit(form) {
     console.log(form.value);
     let users: any = new UsersComponent().getAllUsers();
-    for ( let user of users){
-        if ( user['email'] == form.value['email'] && user['password'] == form.value['password'] ){
-          console.log('done')
-          LoginComponent.loggedIn = true;
-          LoginComponent.loggedInUsername = user['name'];
-
-          this.router.navigate(['/github']);
-
-        }else{
-          console.log('fail')
-        }
+    for (let user of users) {
+      if (user['email'] == form.value['email'] && user['password'] == form.value['password']) {
+        console.log('done')
+        LoginComponent.loggedIn = true;
+        LoginComponent.loggedInUsername = user['name'];
+        this.router.navigate(['/github']);
+      }
+      if (!LoginComponent.loggedIn) {
+        return false;
+      }
     }
-
-
-    console.log(users);
   }
 
-  isUserLoggedIn(){
+  isUserLoggedIn() {
     console.log(LoginComponent.loggedIn);
     return LoginComponent.loggedIn;
   }

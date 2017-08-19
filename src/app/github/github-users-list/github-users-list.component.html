@@ -1,4 +1,24 @@
-<div class="card">
-  <div class="card-body">
-  </div>
+<div class="list-group">
+  <a  class="list-group-item active">
+    Github Users
+  </a>
+  <a  class="list-group-item list-group-item-action" *ngFor="let user of githubUsers">
+
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3">
+            <img [src]="user.avatar_url" alt="{{user.login}}" style="max-height: 50px">
+          </div>
+        <div class="card-block col-md-9">
+          <h4 class="card-title">{{user.login}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.type}}</h6>
+        </div>
+        <p class="card-text">{{user.html_url}}</p>
+      </div>
+
+    </div>
+
+
+  </a>
+
 </div>

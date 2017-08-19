@@ -1,26 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+// import { GitUsers } from "../gitusers";
+import { ApiService } from "../api.service";
 
 
 @Component({
   selector: 'app-github-users-list',
   templateUrl: './github-users-list.component.html',
-  styleUrls: ['./github-users-list.component.css']
+  styleUrls: ['./github-users-list.component.css'],
+  providers: [ApiService]
 })
 export class GithubUsersListComponent implements OnInit {
-  githubUsers = [];
-  constructor(private http: Http) { }
+  githubUsers: any[];
+  constructor(private apiSerivce: ApiService) { }
 
-  ngOnInit() {
+  ngOnInit(): void{
+    console.log('GithubUsersListComponent');
+    this.getAllGithubUsers();
   }
 
-  getAllGithubUsers(){
-    console.log('i\'m there');
-    this.http.get('https://api.github.com/users').subscribe(data => {
-      // Read the result field from the JSON response.
-      this.githubUsers = data['results'];
+  getAllGithubUsers(): void{
+    console.log('GithubUsersListComponent->getAllGithubUsers');
 
-      });
-      return this.githubUsers;
+    this.apiSerivce.getPosts()
+             .subscribe(
+                 resultArray => this.githubUsers = resultArray,
+                 error => console.log("Error :: " + error)
+             );
   }
 }
