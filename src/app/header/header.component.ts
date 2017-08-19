@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../users/login/login.component'
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,13 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isUserLoggedIn(){
+    return LoginComponent.loggedIn;
+  }
+  getLoggedInUsername(){
+    return LoginComponent.loggedInUsername;
   }
 
 }
