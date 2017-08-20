@@ -12,11 +12,20 @@ import {Injectable} from "@angular/core";
      constructor(private http: Http) {
      }
 
-     getPosts(): Observable<any[]> {
+     getGitUsers(): Observable<any[]> {
          return this.http
              .get(this._postsURL)
              .map((response: Response) => {
                  return <any[]>response.json();
+             })
+             .catch(this.handleError);
+     }
+
+     getGitUser(username: string): Observable<any> {
+         return this.http
+             .get(this._postsURL+'/'+username)
+             .map((response: Response) => {
+                 return <any>response.json();
              })
              .catch(this.handleError);
      }

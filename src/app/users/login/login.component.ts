@@ -20,16 +20,23 @@ export class LoginComponent implements OnInit {
   loginSubmit(form) {
     console.log(form.value);
     let users: any = new UsersComponent().getAllUsers();
+    console.log(users)
+
     for (let user of users) {
+      console.log(user['email'])
+      console.log(form.value['email'])
+      console.log(user['email'] == form.value['email'])
       if (user['email'] == form.value['email'] && user['password'] == form.value['password']) {
         console.log('done')
         LoginComponent.loggedIn = true;
         LoginComponent.loggedInUsername = user['name'];
         this.router.navigate(['/github']);
+        console.log('login')
       }
-      if (!LoginComponent.loggedIn) {
-        return false;
-      }
+
+    }
+    if (!LoginComponent.loggedIn) {
+      return false;
     }
   }
 

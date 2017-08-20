@@ -1,8 +1,12 @@
 <div class="card" >
-  <img class="card-img-top" src="http://via.placeholder.com/350x150" alt="Card image cap">
+  <img class="card-img-top"
+  src="{{gitUser.avatar_url}}"
+  alt="Card image cap"
+  style="max-height: 500px"
+  >
   <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">{{gitUser.login}}</h4>
+    <p class="card-text">{{gitUser.html_url}}</p>
+    <a href="{{gitUser.html_url}}" target="_blank" class="btn btn-primary">Go to {{gitUser.login}} Profile</a>
   </div>
 </div>
