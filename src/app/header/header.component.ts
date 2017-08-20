@@ -13,10 +13,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  isUserLoggedIn(){
+  isUserLoggedIn() {
     return LoginComponent.loggedIn;
   }
-  getLoggedInUsername(){
+  getLoggedInUsername() {
     return LoginComponent.loggedInUsername;
   }
 

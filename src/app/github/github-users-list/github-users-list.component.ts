@@ -10,32 +10,11 @@ import { ApiService } from "../api.service";
   providers: [ApiService]
 })
 export class GithubUsersListComponent implements OnInit {
-  // githubUsers: any[];
   @Input() gitUser: any;
   constructor() { }
 
-  ngOnInit(): void{
-    // console.log('GithubUsersListComponent');
-    // this.getAllGithubUsers();
+  ngOnInit(): void {
 
   }
 
-  // getAllGithubUsers(): void{
-  //   console.log('GithubUsersListComponent->getAllGithubUsers');
-  //
-  //   this.apiSerivce.getGitUsers()
-  //            .subscribe(
-  //                resultArray => [this.githubUsers = resultArray,GithubUsersListComponent.githubUser = resultArray[0]],
-  //                error => console.log("Error :: " + error)
-  //            );
-  // }
-  // getGithubUserDetail(username: string = GithubUsersListComponent.githubUser): void{
-  //   console.log('GithubUsersListComponent->getGithubUserDetail',username);
-  //
-  //   this.apiSerivce.getGitUser(username)
-  //            .subscribe(
-  //                resultArray => GithubUsersListComponent.githubUser = resultArray,
-  //                error => console.log("Error :: " + error)
-  //            );
-  // }
 }

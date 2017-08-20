@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule , Response, RequestOptions, Headers } from '@angular/http';
+import { HttpModule, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -13,8 +13,8 @@ import { GithubUserDetailComponent } from './github/github-user-detail/github-us
 import { LoginComponent } from './users/login/login.component';
 
 const appRoutes: Routes = [
-    { path: '', component: LoginComponent },
-    { path: 'github', component: GithubComponent },
+  { path: '', component: LoginComponent },
+  { path: 'github', component: GithubComponent },
 
 ];
 @NgModule({
@@ -33,9 +33,9 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
-  appRoutes,
-  { enableTracing: true } // <-- debugging purposes only
-),
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     HttpClientModule
   ],
   providers: [],

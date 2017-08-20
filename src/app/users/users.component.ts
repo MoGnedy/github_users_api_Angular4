@@ -6,19 +6,19 @@ import { User } from './user.model';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
- users: User[] =[];
+  users: User[] = [];
   constructor() {
     this.users = [
-      new User('mohamed','mohamed@email.com','123'),
-      new User('gnedy','gnedy@email.com','123'),
+      new User('mohamed', 'mohamed@email.com', '123'),
+      new User('gnedy', 'gnedy@email.com', '123'),
 
     ]
-   }
+  }
 
   ngOnInit() {
   }
 
-  getAllUsers(){
+  getAllUsers() {
     return this.users;
   }
 

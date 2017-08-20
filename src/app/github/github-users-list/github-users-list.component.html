@@ -1,18 +1,17 @@
-
-  <a  class="list-group-item list-group-item-action" >
-      <div class="card">
-        <div class="row">
-          <div class="col-md-3">
-            <img [src]="gitUser.avatar_url" alt="{{gitUser.login}}" style="max-height: 50px">
-          </div>
-        <div class="card-block col-md-9">
-          <h4 class="card-title">{{gitUser.login}}</h4>
-          <h6 class="card-subtitle mb-2 text-muted">{{gitUser.type}}</h6>
-        </div>
-        <p class="card-text">{{gitUser.html_url}}</p>
+<a class="list-group-item list-group-item-action">
+  <div class="card">
+    <div class="row">
+      <div class="col-md-3">
+        <img [src]="gitUser.avatar_url" alt="{{gitUser.login}}" style="max-height: 50px">
       </div>
-
+      <div class="card-block col-md-9">
+        <h4 class="card-title">{{gitUser.login}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{gitUser.type}}</h6>
+      </div>
+      <p class="card-text">{{gitUser.html_url}}</p>
     </div>
 
+  </div>
 
-  </a>
+
+</a>

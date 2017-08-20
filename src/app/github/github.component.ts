@@ -6,43 +6,35 @@ import { ApiService } from "./api.service";
   selector: 'app-github',
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.css'],
-    providers: [ApiService]
+  providers: [ApiService]
 })
 export class GithubComponent implements OnInit {
 
   githubUsers: any[];
-  @Output() public githubUserDetail: any ;
-  constructor(private apiSerivce: ApiService) {
-    this.githubUserDetail = {login:'Gnedy'}
-  }
+  @Output() public githubUserDetail: any;
+  constructor(private apiSerivce: ApiService) { }
 
-  ngOnInit(): void{
-    console.log('GithubUsersListComponent');
+  ngOnInit(): void {
 
     this.getAllGithubUsers();
 
   }
 
-  getAllGithubUsers(): void{
-    console.log('GithubUsersListComponent->getAllGithubUsers');
+  getAllGithubUsers(): void {
 
     this.apiSerivce.getGitUsers()
-             .subscribe(
-                 resultArray => [this.githubUsers = resultArray,this.githubUserDetail = resultArray[0]],
-                 error => console.log("Error :: " + error)
-             );
+      .subscribe(
+      resultArray => [this.githubUsers = resultArray, this.githubUserDetail = resultArray[0]],
+      error => console.log("Error :: " + error)
+      );
 
   }
-  getGithubUserDetail(event,username: string = this.githubUserDetail): void{
-    console.log('GithubUsersListComponent->getGithubUserDetail',username);
-    console.log(this.githubUserDetail)
-    // console.log(event.target)
+  getGithubUserDetail(event, username: string = this.githubUserDetail): void {
     this.apiSerivce.getGitUser(username)
-             .subscribe(
-                 resultArray => this.githubUserDetail = resultArray,
-                 error => console.log("Error :: " + error)
-             );
-             console.log(this.githubUserDetail)
+      .subscribe(
+      resultArray => this.githubUserDetail = resultArray,
+      error => console.log("Error :: " + error)
+      );
   }
 
 }

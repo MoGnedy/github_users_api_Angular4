@@ -3,16 +3,16 @@ export class User {
   public email: string;
   public password: string;
 
-  constructor(name: string,email: string, password: string){
-      this.name = name;
-      this.email = email;
-      this.password = password;
+  constructor(name: string, email: string, password: string) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
   }
 
-  getUserData(){
+  getUserData() {
     return {
-      username:this.email,
-      password:this.password
+      username: this.email,
+      password: this.password
     }
   }
 }
